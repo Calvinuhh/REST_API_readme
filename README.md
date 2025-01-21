@@ -2,7 +2,7 @@
 
 ### Tecnologias implementadas:
 
-`Node.js, React, Tailwind CSS, Express.js, MongoDB, Mongoose, JWT, Bcrypt, TypeScript, MailTrap, Nodemailer`
+`Node.js, React, Tailwind CSS, Express.js, MongoDB, Mongoose, JWT, Bcrypt, TypeScript, MailTrap, Nodemailer, Sendgrid`
 
 Repositorio de Frontend - https://github.com/Calvinuhh/REST_API_client
 
@@ -12,7 +12,23 @@ La version de `Node` utilizada para la prueba es la version `22.12.0`, en caso d
 
 Este proyecto tiene separacion de **_Frontend y Backend_** por lo que se tendra que descargar ambos repositorios por separado.
 
-Se recomienda tener a la mano las variables de entorno para trabajar con **_Mailtrap_**, que vendrian siendo las siguientes: `MAIL_HOST`, `MAIL_PORT`, `MAIL_USER` y `MAIL_PASSWORD` de **Mailtrap**.
+Este proyecto implementa **_MailTrap_** y **_Nodemailer_** en desarrollo y Twilio **_Sendgrid_** en produccion, la rama `main` es para desarrollo y la rama `production` es la de produccion
+
+Si se va a trabajar con **_MailTrap_** y **_Nodemailer_** Se recomienda tener a la mano las variables de entorno: `MAIL_HOST`, `MAIL_PORT`, `MAIL_USER` y `MAIL_PASSWORD`.
+
+En caso de querer trabajar con **_SendGrid_** las variables de entorno necesarias serian `EMAIL` y `SENDGRID_API_KEY`.
+
+`EMAIL` es el email del remitente.
+
+Para obtener el codigo de implementacion de _SendGrid_ cuando se clone el repositorio del servidor escribir el comando:
+
+```powershell
+git checkout production
+```
+
+Esto traera la rama production del repositorio remoto y se podra implementar la version del proyecto con **_SendGrid_**
+
+Se puede utilizar tanto en desarrollo como en produccion ambas opciones, depende de la decisión del usuario que quiera probar el proyecto.
 
 Primeramente de descargaran los 2 repositorios en una carpeta que sera la carpeta raiz.
 
@@ -75,6 +91,9 @@ MAIL_HOST=(Host de correo)
 MAIL_PORT=(Port de correo)
 MAIL_USER=(User de correo)
 MAIL_PASSWORD=(Password de correo)
+
+EMAIL=(Email de envio)
+SENDGRID_API_KEY=(Sendgrid API Key)
 ```
 
 Reemplazar las variables de entorno con los valores necesarios para levantar los proyectos en desarrollo.
